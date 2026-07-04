@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+</head>
+<body>
+
+    <h1>Student Registration Form</h1>
+
+    <input type="text" id="name" placeholder="Enter Student Name">
+    <button onclick="addName()">Add student</button>
+
+    <hr>
+
+    <h2>Students List</h2>
+
+    <div id="result"></div>
+
+    <script>
+
+        let students = [];
+
+        function displayStudents() {
+
+            let output = "";
+
+            for (let i = 0; i < students.length; i++) {
+
+                output += `
+                    ${students[i]}
+                    <button onclick="deleteName(${i})">Delete</button>
+                    <br><br>
+                `;
+            }
+
+            document.getElementById("result").innerHTML = output;
+        }
+
+        function addName() {
+
+            let name = document.getElementById("name").value.trim();
+
+            if (name !== "") {
+
+                students.push(name);
+
+                document.getElementById("name").value = "";
+
+                displayStudents();
+            }
+        }
+
+        function deleteName(index) {
+
+            students.splice(index, 1);
+
+            displayStudents();
+        }
+
+    </script>
+
+</body>
+</html>
