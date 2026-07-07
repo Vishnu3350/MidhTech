@@ -1,6 +1,7 @@
 import random
 
 system = random.randint(1, 100) #a function in Python that generates a random integer number within a given range.
+
 count = 0
 
 while True:

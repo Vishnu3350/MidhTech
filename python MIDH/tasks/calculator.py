@@ -1,4 +1,5 @@
-operation = input("Select the operator +, -, *, /, %, ^: ")
+operation = input("Select the operator +, -, *, /, %, **, // : ")
+
 num1 = float(input("Enter number1: "))
 num2 = float(input("Enter number2: "))
 
@@ -10,11 +11,15 @@ elif operation == "-":
 elif operation == "*":
     result = num1 * num2
 elif operation == "/":
-    result = num1/num2
+    result = num1 / num2
 elif operation == "%":
-    result = num1%num2
+    result = num1 % num2
+elif operation == "**":
+    result = num1 ** num2
+elif operation == "//":
+    result = num1 // num2
 else:
-    result = num1 ^ num2
+    result = "Invalid operator"
 
 
 print(result)
